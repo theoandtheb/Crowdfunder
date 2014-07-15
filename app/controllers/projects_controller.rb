@@ -17,6 +17,10 @@ class ProjectsController < ApplicationController
 		end
 	end
 
+	def show
+		@project = Project.find(params[:id])
+	end
+
 private
 	def project_params
 		params.require(:project).permit(:title, :description, :goal, :start_date, :end_date)
