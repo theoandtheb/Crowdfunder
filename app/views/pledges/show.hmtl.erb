@@ -1,0 +1,5 @@
+<h1>All pledges for this project</h1>
+
+<% @pledges.each do |p| %>
+	<p><%= link_to "Support this project", "projects/:project_id/pledges/#{p.id}" %></p>
+<% end %>

@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
 		@projects = Project.all
 	end
 
+	def show
+		@projects = Project.all
+	end
+
 	def new
 		@project = Project.new
 	end
@@ -23,6 +27,6 @@ class ProjectsController < ApplicationController
 
 private
 	def project_params
-		params.require(:project).permit(:title, :description, :goal, :start_date, :end_date)
+		params.require(:project).permit(:title, :description, :goal, :start_date, :end_date, :category)
 	end
 end

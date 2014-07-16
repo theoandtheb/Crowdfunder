@@ -1,5 +1,13 @@
+# <<<<<<< HEAD
+# Rails.application.routes.draw do
+
+#   resources :projects do
+#     resources :pledges
+# =======
 Crowdfunder::Application.routes.draw do
-  resources :projects 
+  resources :projects do
+    resources :pledges
+  end
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
   end
