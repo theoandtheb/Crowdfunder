@@ -11,4 +11,5 @@
 <div class="pledge_amount">
 	<%= render "pledges/form" %>
 </div>
+<p><%= link_to "See All Pledges for this Project", "/projects/#{@project.id}/pledges" %></p>
 <p><%= link_to 'Return to All Projects', projects_url %></p>

@@ -1,5 +1,5 @@
 <% @pledges.each do |pledge| %>
 	<p>
-		<%= pledge.amount %>
+		<%= number_to_currency(pledge.amount) %>
 	</p>
 <% end %> 

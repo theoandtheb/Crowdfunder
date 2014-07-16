@@ -2,4 +2,4 @@
 
 <%= render "pledges/pledge" %><br />
 
-<%= link_to "All Active Projects", "/projects" %>
+<%= link_to "Back to #{@project.title}", "/projects/#{@project.id}" %>
