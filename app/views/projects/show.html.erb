@@ -1,0 +1,10 @@
+<h1>Project Details</h1>
+
+
+<% @projects.each do |p| %>
+	<p><%= link_to p.title, "/projects/#{p.id}" %></p>
+	<p>by <%= "/p.user.name/" %></p>
+	<%= %>
+	<%= %>
+	<%= %>
+<% end %>

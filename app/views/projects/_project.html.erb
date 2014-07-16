@@ -1,5 +1,8 @@
 <% @projects.each do |p| %>
 	<div class="projects">
-	<p><%= link_to p.title, "/projects/#{p.id}" %>
+	<p>
+		<%= link_to p.title, "/projects/#{p.id}" %><br />
+		<%= link_to "Support this project", "/projects/#{p.id}/pledges" %>
+	</p>
 	</div)
 <% end %>
