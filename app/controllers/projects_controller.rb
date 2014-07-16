@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@projects = Project.all
+		@project = Project.find(params[:id])
+		@pledge = @project.pledges.new
 	end
 
 	def new
@@ -19,10 +20,6 @@ class ProjectsController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def show
-		@project = Project.find(params[:id])
 	end
 
 private
