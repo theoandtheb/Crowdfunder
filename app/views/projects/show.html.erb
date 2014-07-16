@@ -1,10 +1,12 @@
-<h1>Project Details</h1>
+<h1><%= @project.title %></h1>
+<div class"descr">
+	<p><%= @project.description %></p>
+</div>
+<div class="proj_details">
+	<p>$NaN pledged of $<%= @project.goal %> goal</p>
+	<p>Project started on <%= @project.start_date.strftime("%A %B %-d, %Y") %></p>
+	<p><%= distance_of_time_in_words(Time.now, @project.end_date) %> to go</p>
+</div>
 
-
-<% @projects.each do |p| %>
-	<p><%= link_to p.title, "/projects/#{p.id}" %></p>
-	<p>by <%= "/p.user.name/" %></p>
-	<%= %>
-	<%= %>
-	<%= %>
-<% end %>
+<div><h2>DONATE BUTTON!!!</h2></div>
+<p><%= link_to 'Return to All Projects', projects_url %></p>

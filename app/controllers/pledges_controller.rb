@@ -4,6 +4,7 @@ class PledgesController < ApplicationController
 	def	index
 		@projects = Project.all
 		@project = Project.find(params[:project_id])
+		@pledges = @project.pledges.all
 	end
 
 	def show
@@ -14,11 +15,6 @@ class PledgesController < ApplicationController
 			# Check for all active pledges for the current user.
 		end
 	end
-
-	# def new
-	# 	@project = Project.find(params[:project_id])
-	# 	@pledge = @project.pledges.new
-	# end
 
 	def create
 		@pledge = @project.pledges.build(pledge_params)
