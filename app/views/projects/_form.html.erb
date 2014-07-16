@@ -31,6 +31,10 @@
 <%= f.label :end_date %><br>
 <%= f.date_field :end_date %>
 </div>
+<div>
+<%= f.label :category %>
+    <%= f.select :category, options_for_select(%w[Art Comics Crafts Dance Design Fashion Film\ &\ Video Food Games Journalism Music Photography Publishing Technology Theater]) %>
+</div>
 <div class="actions">
 	<%= f.submit %>
 </div>
