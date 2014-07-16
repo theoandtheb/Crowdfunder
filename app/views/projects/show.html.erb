@@ -7,6 +7,5 @@
 	<p>Project started on <%= @project.start_date.strftime("%A %B %-d, %Y") %></p>
 	<p><%= distance_of_time_in_words(Time.now, @project.end_date) %> to go</p>
 </div>
-
-<div><h2>DONATE BUTTON!!!</h2></div>
+	<%= render "pledges/form" %>
 <p><%= link_to 'Return to All Projects', projects_url %></p>

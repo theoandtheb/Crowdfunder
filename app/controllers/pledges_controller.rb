@@ -3,17 +3,19 @@ class PledgesController < ApplicationController
 
 	def	index
 		@projects = Project.all
-		@project = Project.find(params[:project_id])
 		@pledges = @project.pledges.all
 	end
 
 	def show
-		@project = Project.find(params[:project_id])
-		@pledge = @project.pledges.find(params[:id])
+		@pledges = @project.pledges.find(params[:id])
 
 		if current_user
 			# Check for all active pledges for the current user.
 		end
+	end
+
+	def new
+		@pledge = @project.pledges.new
 	end
 
 	def create
@@ -26,12 +28,10 @@ class PledgesController < ApplicationController
 	end
 
 	def edit
-		@project = Project.find(params[:project_id])
 		@pledge = @project.pledges.find(params[:id])
 	end
 
 	def update
-		@project = Project.find(params[:project_id])
 		@pledge = @project.pledges.find(params[:id])
 
 		if @pledge.update_attributes(pledge_params)
@@ -42,7 +42,6 @@ class PledgesController < ApplicationController
 	end
 
 	def destroy
-		@project = Project.find(params[:project_id])
 		@pledge = @project.pledges.find(params[:id])
 		@pledge.destroy
 		redirect_to project_pledge_path
