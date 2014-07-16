@@ -4,9 +4,11 @@
 	<p><%= @project.description %></p>
 </div>
 <div class="proj_details">
-	<p>$NaN pledged of $<%= @project.goal %> goal</p>
+	<p>$NaN pledged of <%= number_to_currency(@project.goal, unit: "$") %> goal</p>
 	<p>Project started on <%= @project.start_date.strftime("%A %B %-d, %Y") %></p>
 	<p><%= distance_of_time_in_words(Time.now, @project.end_date) %> to go</p>
 </div>
+<div class="pledge_amount">
 	<%= render "pledges/form" %>
+</div>
 <p><%= link_to 'Return to All Projects', projects_url %></p>

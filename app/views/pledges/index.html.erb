@@ -1,9 +1,5 @@
-<h1>All of Your Pledges</h1>
+<h1>All Pledges For <%= @project.title %></h1>
 
-	<% @pledges.each do |pledge| %>
-		<div id="pledges">
-			<%= render "pledges/pledge" %>
-		</div>
-	<% end %>
+<%= render "pledges/pledge" %><br />
 
 <%= link_to "All Active Projects", "/projects" %>

@@ -15,10 +15,12 @@ class PledgesController < ApplicationController
 	end
 
 	def new
+		@pledges = @project.pledges.all
 		@pledge = @project.pledges.new
 	end
 
 	def create
+		@pledges = @project.pledges.all
 		@pledge = @project.pledges.build(pledge_params)
 
 
