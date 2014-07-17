@@ -4,8 +4,8 @@
 	<p>by <%= "/p.user.name/" %></p>
 	<p><%= p.category %></p>
 	<p><%= truncate(p.description, length: 140) %></p>
-	<p><%= "/percent funded/" %> funded</p>
-	<p><%= "/total pledged/" %> pledged</p>
+	<p><%= number_to_currency(p.total) %> pledged</p>
+	<p><%= ((p.total.to_f)/(p.goal.to_f)*100.0).round(4) %>% of <%= number_to_currency(p.total) %> goal</p>
 	<p><%= distance_of_time_in_words(Time.now, p.end_date) %> to go</p>
 	<br><br>
 	</div>

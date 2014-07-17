@@ -3,3 +3,6 @@
 		<%= number_to_currency(pledge.amount) %>
 	</p>
 <% end %> 
+
+<br />
+<p class="pledge_total">Total pledges for this project: <%= number_to_currency(@project.total) %><p>

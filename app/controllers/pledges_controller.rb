@@ -23,7 +23,6 @@ class PledgesController < ApplicationController
 		@pledges = @project.pledges.all
 		@pledge = @project.pledges.build(pledge_params)
 
-
 		if @pledge.save
 			render :new
 		end
