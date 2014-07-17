@@ -1,19 +1,19 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
-  	user = User.find_by_email(params[:email])
-  	if user && user.authenticate(params[:password])
-  		session[:user_id] = user.id
-  		redirect_to projects_url, :notice => "Logged in"
-  	else 
-  		render new
-  	end
+  	 if @user = login(params[:email], params[:password], params[:remember_me])
+      redirect_back_or_to(projects_url, notice: 'Login successful')
+    else
+      flash.now[:alert] = 'Login failed'
+      render action: 'new'
+    end
   end
 
   def destroy
-  	session[:user_id] = nil
-  	redirect_to projects_url, :notice => "Logged out!"
+    logout
+    redirect_to project_url, notice: 'Logged out!'
   end
 end
