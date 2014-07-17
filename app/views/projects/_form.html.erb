@@ -35,6 +35,15 @@
 <%= f.label :category %>
     <%= f.select :category, options_for_select(%w[Art Comics Crafts Dance Design Fashion Film\ &\ Video Food Games Journalism Music Photography Publishing Technology Theater]) %>
 </div>
+  <p>Rewards</p>
+  <%= f.fields_for :rewards do |r| %>
+    <%= render 'reward_fields', :f => r %>
+  <% end %>
+  </div>
+
+  <div>
+    <%= link_to_add_association 'add reward', f, :rewards %>
+  </div>
 <div class="actions">
 	<%= f.submit %>
 </div>
