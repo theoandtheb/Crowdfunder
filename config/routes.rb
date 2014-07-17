@@ -1,15 +1,12 @@
-# <<<<<<< HEAD
-# Rails.application.routes.draw do
-
-#   resources :projects do
-#     resources :pledges
-# =======
 Crowdfunder::Application.routes.draw do
   resources :projects do
-    resources :pledges
+  resources :pledges
   end
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
+
+  get 'login' => 'sessions#new', :as => :login
+  post 'logout' => 'sessions#destroy', :as => :logout
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

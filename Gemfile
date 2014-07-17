@@ -31,9 +31,10 @@ gem 'spring',        group: :development
 # gem "binding_of_caller"
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 gem "cocoon"
 gem 'acts-as-taggable-on'
+gem 'sorcery'
 
 # Use unicorn as the app server
 # gem 'unicorn'
