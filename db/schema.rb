@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20140717193846) do
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "category"
     t.integer  "user_id"
   end
@@ -72,7 +71,6 @@ ActiveRecord::Schema.define(version: 20140717193846) do
     t.string   "salt",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
   end
