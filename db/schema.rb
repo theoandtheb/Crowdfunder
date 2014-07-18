@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718164432) do
+ActiveRecord::Schema.define(version: 20140718174441) do
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20140718164432) do
     t.string   "salt",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
   end
