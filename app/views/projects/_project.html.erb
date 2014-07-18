@@ -1,11 +1,11 @@
 <% @projects.each do |p| %>
 	<div class="projects">
 	<h2><%= link_to p.title, "/projects/#{p.id}" %></h2>
-	<p>by <%= p.user.name %></p>
+	<p>by //p.user.name//</p>
 	<p><%= p.category %></p>
 	<p><%= truncate(p.description, length: 140) %></p>
 	<p><%= number_to_currency(p.total) %> pledged</p>
-	<p><%= ((p.total.to_f)/(p.goal.to_f)*100.0).round(4) %>% of <%= number_to_currency(p.total) %> goal</p>
+	<p><%= ((p.total.to_f)/(p.goal.to_f)*100.0).round(4) %>% of <%= number_to_currency(p.goal) %> goal</p>
 	<p><%= distance_of_time_in_words(Time.now, p.end_date) %> to go</p>
 	<br><br>
 	</div>

@@ -1,0 +1,5 @@
+<h1>All Comments For <%= @project.title %></h1>
+
+<%= render "comments/comment" %><br />
+
+<%= link_to "Back to #{@project.title}", "/projects/#{@project.id}" %>

@@ -13,5 +13,14 @@
 <div class="pledge_amount">
 	<%= render "pledges/form" %>
 </div>
+
 <p><%= link_to "See All Pledges for this Project", "/projects/#{@project.id}/pledges" %></p>
-<p><%= link_to 'Return to All Projects', projects_url %></p>
+<p><%= link_to 'Return to All Projects', projects_url %></p><br />
+
+<div class="create_comment">
+	<%= render "comments/form" %>
+</div>
+
+<div class="show_comments">
+	<%= link_to "Show All Comments for this Project", "/projects/#{@project.id}/comments" %>
+</div>

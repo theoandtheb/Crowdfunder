@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
 	has_many :pledges
 	has_many :rewards
+	has_many :comments
 	belongs_to :user
 	accepts_nested_attributes_for :rewards
 
